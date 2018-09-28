@@ -8,7 +8,7 @@ module Api
         return false if person.nil?
         results_array = person.send(params[:relation].parameterize('_'))
         unless results_array.nil?
-          render json: { collection: results_array.flatten.compact.map {|p|  p.name} }
+          render json: { collection: results_array.compact.flatten.map {|p|  p.name} }
         end
       end
 
